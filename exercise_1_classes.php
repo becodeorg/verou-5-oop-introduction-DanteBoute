@@ -20,6 +20,7 @@ class Beverage {
 $cola = new Beverage("Black", 2);
 echo $cola->getInfo();
 
+
 /* EXERCISE 1
 TODO: Create a class beverage.
 TODO: Create the properties color (string), price (float) and temperature (string) and also foresee a construct.
