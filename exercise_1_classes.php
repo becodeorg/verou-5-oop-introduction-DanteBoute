@@ -2,24 +2,6 @@
 
 declare(strict_types=1);
 
-class Beverage {
-  public $color;
-  public $price;
-  public $temperature;
-
-  function __construct(string $name, boolean $price, string $temperature = 'cold') {
-    $this->name = $name;
-    $this->price = $color;
-    $this->temperature = $temperature;
-  }
-  function getInfo() {
-    echo "This beverage is $this->temperature and $this->color.";
-  }
-}
-
-$cola = new Beverage("Black", 2);
-echo $cola->getInfo();
-
 
 /* EXERCISE 1
 TODO: Create a class beverage.
@@ -34,3 +16,27 @@ TODO: Print the temperature on the screen.
 
 USE TYPEHINTING EVERYWHERE!
 */
+
+
+class Beverage {
+    public $color;
+    public $price;
+    public $temperature = 'cold';
+    public $name;
+
+    function __construct(string $color, float $price, string $temperature = 'cold') {
+        $this->name = $name;
+        $this->color = $color;
+        $this->price = $price;
+        $this->temperature = $temperature;
+    }
+
+    function getInfo() {
+        echo "This beverage is $this->temperature and $this->color.";
+    }
+}
+
+$cola = new Beverage("black", 2);
+echo $cola->getInfo();
+echo "<br>";
+echo $cola->temperature;
