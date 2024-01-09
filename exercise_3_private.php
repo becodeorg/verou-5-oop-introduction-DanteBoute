@@ -16,3 +16,47 @@ TODO: Print this method on the screen on a new line.
 
 USE TYPEHINTING EVERYWHERE!
 */
+
+class Beverage {
+    // Properties / Fields
+    private $color = 'red';
+    private $price;
+    private $temperature = 'cold';
+    private $name;
+
+    function __construct(string $name, string $color, float $price, string $temperature) {
+        $this->name = $name;
+        $this->color = $color;
+        $this->price = $price;
+        $this->temperature = $temperature;
+    }
+
+    function getInfo() {
+        echo "This beverage is $this->temperature and $this->color.";
+    }
+}
+
+class Beer extends Beverage {
+    private $alcoholPercentage;
+    private $color = 'red';
+    private $price;
+    private $temperature = 'cold';
+    private $name;
+
+    function __construct(string $name, string $color, float $alcoholPercentage, float $price) {
+        parent::__construct($name, $color, $price, 'cold');
+        $this->alcoholPercentage = $alcoholPercentage;
+        $this->name = $name;
+        $this->color = $color;
+        $this->price = $price;
+        $this->temperature = $temperature;
+    }
+
+    function getInfo() {
+        echo "This beer is a {$this->name} with alcohol percentage {$this->alcoholPercentage}%, the price of this beer is €{$this->price}.";
+    }
+}
+
+$Duvel = new Beer("Duvel", "light", 8.5, 3.5);
+$Duvel->getInfo();
+
